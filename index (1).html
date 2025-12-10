@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xuper TV Stick Colombia</title>
+<style>
+body{font-family:Arial;background:#111;color:#fff;margin:0;padding:0;}
+header{text-align:center;padding:40px 20px;background:#900;}
+h1{color:#ffd700;}
+.section{padding:20px;text-align:center;}
+.carousel{position:relative;max-width:600px;margin:auto;overflow:hidden;border:2px solid #555;border-radius:10px;}
+.slides{display:flex;transition:0.5s;}
+.slides img{width:100%;border-radius:10px;}
+.btn{position:absolute;top:50%;transform:translateY(-50%);background:#0008;color:#fff;
+border:none;font-size:22px;padding:10px;cursor:pointer;}
+.prev{left:10px;}
+.next{right:10px;}
+.indicators{text-align:center;margin-top:10px;}
+.indicators span{display:inline-block;width:12px;height:12px;margin:5px;background:#666;border-radius:50%;cursor:pointer;}
+.active{background:#ffd700 !important;}
+.whatsapp{display:inline-block;margin-top:20px;background:#25D366;padding:15px 25px;color:#fff;
+font-size:20px;border-radius:8px;text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Convierte cualquier televisor en un modem con más de 1000 canales de TV</h1>
+</header>
+
+<section class="section">
+<h2>Imágenes del Producto</h2>
+
+<div class="carousel">
+    <div class="slides" id="slides">
+        <img src="ChatGPT Image 29 nov 2025, 03_03_43 p.m..png">
+        <img src="1000122863.jpg">
+    </div>
+    <button class="btn prev" onclick="move(-1)">❮</button>
+    <button class="btn next" onclick="move(1)">❯</button>
+</div>
+
+<div class="indicators">
+    <span onclick="goTo(0)" class="active"></span>
+    <span onclick="goTo(1)"></span>
+</div>
+
+</section>
+
+<section class="section">
+<h2>Fácil instalación y envío a toda Colombia</h2>
+<p>Incluye series, películas de Netflix, etc… lo que ya estaba ahí.</p>
+<h2>Precio: $60.000 COP</h2>
+
+<a class="whatsapp" href="https://wa.me/573207467220">WhatsApp 320 7467220</a>
+</section>
+
+<script>
+let index = 0;
+function show(){
+    document.getElementById("slides").style.transform = "translateX(" + (-index*100) + "%)";
+    let dots = document.querySelectorAll(".indicators span");
+    dots.forEach(d=>d.classList.remove("active"));
+    dots[index].classList.add("active");
+}
+function move(n){
+    index = (index + n + 2) % 2;
+    show();
+}
+function goTo(n){
+    index = n;
+    show();
+}
+setInterval(()=>move(1),4000);
+</script>
+
+</body>
+</html>
